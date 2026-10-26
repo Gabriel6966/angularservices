@@ -1,0 +1,10 @@
+<h1>ServiceComics IoC</h1>
+<ul>
+@for(comic of arrayComics; track comic){
+    <li>
+        <h4 color="blue">{{comic.titulo}}</h4>
+        <p>{{comic.descripcion}}</p>
+        <img src="{{comic.imagen}}" style="width: 200px; height: 200px">
+    </li>
+}
+</ul>
