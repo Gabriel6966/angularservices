@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ComicsComponent } from './components/comics-component/comics-component';
+import { PersonaComponent } from './components/persona-component/persona-component';
+import { MenuComponent } from './components/menu-component/menu-component';
 
 const routes: Routes = [
-  {path: 'comics', component: ComicsComponent}
+  {path: 'menu', component: MenuComponent},
+  {path: 'comics', component: ComicsComponent},
+  {path: 'personas', component: PersonaComponent},
+  
 ];
 
 @NgModule({

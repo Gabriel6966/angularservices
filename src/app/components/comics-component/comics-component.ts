@@ -8,20 +8,23 @@ import { Comic } from '../../models/comics';
   styleUrl: './comics-component.css',
   templateUrl: './comics-component.html',
 })
-export class ComicsComponent implements OnInit{
+export class ComicsComponent implements OnInit {
 
   public arrayComics!: Array<Comic>;
-  
-  constructor(private _cdr:ChangeDetectorRef, private _service:ServiceComics){
-    
+
+  constructor(private _cdr: ChangeDetectorRef, private _service: ServiceComics) {
+
   }
 
-  ngOnInit(): void {
-   this._service.getComics().then((data: Comic[]) => {
-      this.arrayComics = data;
-      this._cdr.detectChanges();
-    });
-    
+  async ngOnInit() {
+    //  this._service.getComics().then((data: Comic[]) => {
+    //    this.arrayComics = data;
+    //    this._cdr.detectChanges();
+    //  });
+
+    this.arrayComics = await this._service.getComicsAsync();
+    this._cdr.detectChanges();
+
   }
 
 }
