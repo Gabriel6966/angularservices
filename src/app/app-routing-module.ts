@@ -5,6 +5,7 @@ import { PersonaComponent } from './components/persona-component/persona-compone
 import { MenuComponent } from './components/menu-component/menu-component';
 
 const routes: Routes = [
+  {path: '', component: MenuComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'comics', component: ComicsComponent},
   {path: 'personas', component: PersonaComponent},

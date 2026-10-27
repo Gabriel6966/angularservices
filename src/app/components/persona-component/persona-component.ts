@@ -13,16 +13,35 @@ export class PersonaComponent implements OnInit {
 
 
 
-  constructor(private _cdr:ChangeDetectorRef, private _service: ServicePersonas) { 
+  constructor(private _cdr: ChangeDetectorRef, private _service: ServicePersonas) {
 
   }
 
-  ngOnInit(): void {
-    this._service.getPersonas().subscribe((response) =>{
-      console.log("leyendo personas");
-      console.log(response);
-      this.arrayPersonas = response;
+  async ngOnInit(): Promise<void> {
+    try {
+      this.arrayPersonas = await this._service.getPersonasAsync();
       this._cdr.detectChanges();
-    })
+    } catch (error) {
+      console.log("Error al leer personas");
+      console.error(error);
+    }
+
+
+
+    //Metodo con promesa
+    //this._service.getPersonasPromesa().then((response)=>{
+    //  console.log("leyendo personas");
+    //  console.log(response);
+    //  this.arrayPersonas = response;
+    //  this._cdr.detectChanges();
+    //})
+
+    //Metodo con susbcribe
+    //this._service.getPersonas().subscribe((response) =>{
+    //  console.log("leyendo personas");
+    //  console.log(response);
+    //  this.arrayPersonas = response;
+    //  this._cdr.detectChanges();
+    //})
   }
 }
