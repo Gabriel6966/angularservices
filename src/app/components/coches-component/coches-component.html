@@ -1,0 +1,12 @@
+<h1>Coches</h1>
+
+@for(coche of arrayCoches; track coche){
+<li>
+    <h4 color="fuchsia">{{coche.marca}}</h4>
+    <p>{{coche.modelo}}</p>
+    <p>{{coche.conductor}}</p>
+    <p>
+        <img [src]="coche.imagen" [alt]="coche.marca">
+    </p>
+</li>
+}

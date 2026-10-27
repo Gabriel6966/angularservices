@@ -34,14 +34,19 @@ export class PersonaComponent implements OnInit {
     //  console.log(response);
     //  this.arrayPersonas = response;
     //  this._cdr.detectChanges();
+    //}).catch((error: any)=>{
+    //  console.log("Error al leer personas");
+    //  console.error(error);
     //})
 
     //Metodo con susbcribe
-    //this._service.getPersonas().subscribe((response) =>{
-    //  console.log("leyendo personas");
-    //  console.log(response);
+    //this._service.getPersonas().subscribe({
+    //next: (response) => {
+    //  console.log("leyendo personas", response);
     //  this.arrayPersonas = response;
     //  this._cdr.detectChanges();
+    //}, error: (error) => {
+    //  console.log("Error al leer personas", error);
     //})
   }
 }
